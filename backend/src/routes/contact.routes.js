@@ -1,9 +1,8 @@
-// backend/src/routes/contact.routes.js
 const express = require("express");
 const router = express.Router();
 
 const Contact = require("../models/Contact");
-const { sendContactEmail } = require("../services/email.service");
+const { sendContactEmail } = require("../services/email.service"); // ✅ exact file name
 
 /**
  * POST /api/contact
@@ -31,7 +30,6 @@ router.post("/", async (req, res) => {
       });
     }
 
-    // save to DB
     const doc = await Contact.create({
       name,
       email,
@@ -41,17 +39,15 @@ router.post("/", async (req, res) => {
       status: "new",
     });
 
-    // send email (best-effort)
-    let emailSent = false;
+    // email send (try, but lead save success anyway)
     try {
       await sendContactEmail({
+        id: String(doc._id),
         name,
         email,
         phone,
         message,
-        id: String(doc._id),
       });
-      emailSent = true;
     } catch (mailErr) {
       console.warn("⚠️ Email send failed:", mailErr?.message || mailErr);
     }
@@ -60,7 +56,6 @@ router.post("/", async (req, res) => {
       success: true,
       message: "Message received. We will contact you within 24 hours.",
       id: doc._id,
-      emailSent,
     });
   } catch (err) {
     console.error("❌ /api/contact error:", err);
