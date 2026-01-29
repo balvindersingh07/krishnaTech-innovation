@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Contact = require("../models/Contact");
-const { sendContactEmail } = require("../services/email.Service");
+const { sendContactEmail } = require("../services/email.service");
 
 /**
  * POST /api/contact
