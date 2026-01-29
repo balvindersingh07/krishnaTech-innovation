@@ -1,3 +1,4 @@
+// backend/src/routes/contact.routes.js
 const express = require("express");
 const router = express.Router();
 
@@ -15,7 +16,6 @@ router.post("/", async (req, res) => {
     const phone = String(req.body?.phone || "").trim();
     const message = String(req.body?.message || "").trim();
 
-    // basic validation
     if (!name || !email || !message) {
       return res.status(400).json({
         success: false,
@@ -41,7 +41,8 @@ router.post("/", async (req, res) => {
       status: "new",
     });
 
-    // send email (non-blocking feel, but awaited for reliability)
+    // send email (best-effort)
+    let emailSent = false;
     try {
       await sendContactEmail({
         name,
@@ -50,8 +51,8 @@ router.post("/", async (req, res) => {
         message,
         id: String(doc._id),
       });
+      emailSent = true;
     } catch (mailErr) {
-      // still success: lead saved
       console.warn("⚠️ Email send failed:", mailErr?.message || mailErr);
     }
 
@@ -59,6 +60,7 @@ router.post("/", async (req, res) => {
       success: true,
       message: "Message received. We will contact you within 24 hours.",
       id: doc._id,
+      emailSent,
     });
   } catch (err) {
     console.error("❌ /api/contact error:", err);
