@@ -1,4 +1,5 @@
-import { Instagram, Facebook, Send, MessageCircle } from "lucide-react";
+// src/app/sections/Footer.tsx
+import { Instagram, Facebook, Send } from "lucide-react";
 import logo from "../../assets/logo.png";
 
 type Props = {
@@ -6,6 +7,24 @@ type Props = {
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
 };
+
+const SOCIAL_LINKS = [
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/krishnatechinnovations/",
+  },
+  {
+    icon: Send, // ✅ LinkedIn icon
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/krishnatech-innovations-5696013a9/",
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61587314817968",
+  },
+];
 
 export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) {
   return (
@@ -39,24 +58,22 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
 
             {/* Social Icons */}
             <div className="flex items-center gap-5 mt-6">
-              {[
-                { icon: Instagram, label: "Instagram" },
-                { icon: MessageCircle, label: "Threads" },
-                { icon: Send, label: "Telegram" },
-                { icon: Facebook, label: "Facebook" },
-              ].map(({ icon: Icon, label }) => (
+              {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
-                  className="w-12 h-12 flex items-center justify-center rounded-full
+                  title={label}
+                  className="group w-12 h-12 flex items-center justify-center rounded-full
                              border-2 border-purple-400/60
                              bg-white/10
-                             hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-500
                              transition-all duration-300
-                             shadow-md hover:shadow-purple-500/60"
+                             shadow-md hover:shadow-purple-500/60
+                             hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-500"
                 >
-                  <Icon className="w-6 h-6 text-white" />
+                  <Icon className="w-6 h-6 text-white transition-transform duration-300 group-hover:scale-110" />
                 </a>
               ))}
             </div>
