@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
   {
     icon: Send, // ✅ LinkedIn icon
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/krishnatech-innovations-5696013a9/",
+    href: "https://www.linkedin.com/company/krishnatech-innovation/?viewAsMember=true",
   },
   {
     icon: Facebook,
