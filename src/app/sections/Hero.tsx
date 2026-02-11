@@ -17,9 +17,9 @@ export default function Hero({ onExploreServices, onOpenContact }: Props) {
             transition={{ duration: 0.6 }}
             className="text-5xl sm:text-6xl lg:text-7xl text-slate-900 mb-6 leading-tight font-bold"
           >
-            We Build Scalable Web, Mobile & <br />
+            Launch Faster. Scale Smarter. <br />
             <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent">
-              Digital Growth Solutions
+              Build Digital Products That Grow
             </span>
           </motion.h1>
 
@@ -29,8 +29,9 @@ export default function Hero({ onExploreServices, onOpenContact }: Props) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            KrishnaTech Innovations helps startups and enterprises design, build,
-            and grow technology-driven products with measurable results.
+            We help startups and businesses design, develop, and optimize web &
+            mobile solutions—focused on performance, conversion, and measurable
+            results.
           </motion.p>
 
           <motion.div
@@ -43,7 +44,7 @@ export default function Hero({ onExploreServices, onOpenContact }: Props) {
               onClick={onExploreServices}
               className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-700 hover:via-pink-600 hover:to-orange-600 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center justify-center gap-2 font-medium"
             >
-              EXPLORE SERVICES
+              VIEW SERVICES
               <ArrowRight className="w-5 h-5" />
             </button>
 
@@ -51,7 +52,7 @@ export default function Hero({ onExploreServices, onOpenContact }: Props) {
               onClick={onOpenContact}
               className="px-8 py-4 bg-white hover:bg-gradient-to-r hover:from-teal-50 hover:to-blue-50 text-slate-800 rounded-lg transition-all duration-300 border-2 border-purple-300 hover:border-purple-500 flex items-center justify-center gap-2 shadow-md font-medium"
             >
-              GET FREE CONSULTATION
+              BOOK A FREE CONSULTATION
               <ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>

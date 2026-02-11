@@ -9,6 +9,7 @@ import Process from "./sections/Process";
 import Portfolio from "./sections/Portfolio";
 import Team from "./sections/Team";
 import Testimonials from "./sections/Testimonials";
+import Pricing from "./sections/Pricing";
 import CTA from "./sections/CTA";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
@@ -217,6 +218,9 @@ export default function App() {
 
       <Testimonials />
 
+      {/* ✅ NEW: PRICING */}
+      <Pricing onOpenContact={() => setContactModalOpen(true)} />
+
       <CTA onOpenContact={() => setContactModalOpen(true)} />
 
       <Contact />
@@ -340,7 +344,11 @@ export default function App() {
                     aria-label="Send"
                     title="Send"
                   >
-                    {chatLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+                    {chatLoading ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
                 <div className="mt-2 text-[11px] text-slate-500">

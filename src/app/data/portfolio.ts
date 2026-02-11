@@ -20,57 +20,62 @@ import professionalsImg from "../../assets/portfolio/Our Professionals.png";
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-stack marketplace with 100K+ products",
-    category: "Web App",
+    title: "E-Commerce Marketplace Platform",
+    description:
+      "Enterprise-grade marketplace architecture supporting 100K+ products",
+    category: "Web Application",
     image: ecommerceImg,
     fullDescription:
-      "A comprehensive e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory, payment processing, advanced search, and analytics dashboard.",
+      "Designed and developed a scalable full-stack e-commerce marketplace using modern React architecture, Node.js microservices, and MongoDB. The platform supports high-volume transactions, real-time inventory synchronization, secure payment gateway integrations (Stripe/Razorpay), advanced search with filtering, order lifecycle automation, and analytics dashboards. Built with performance optimization, security best practices, and horizontal scalability in mind.",
   },
   {
     id: 2,
-    title: "Healthcare Mobile App",
-    description: "Telemedicine platform for remote consultations",
-    category: "Mobile App",
+    title: "Healthcare Telemedicine Application",
+    description:
+      "Secure telehealth platform for digital patient consultations",
+    category: "Mobile Application",
     image: healthcareImg,
     fullDescription:
-      "HIPAA-compliant telemedicine application enabling secure video consultations, appointment scheduling, prescription management, and health records access.",
+      "A HIPAA-compliant telemedicine solution enabling secure video consultations, appointment scheduling, electronic prescriptions, and digital health records management. Built with scalable backend APIs, encrypted communication channels, and role-based access control to ensure patient data security and compliance. Designed to support high availability and real-time interactions across devices.",
   },
   {
     id: 3,
-    title: "SaaS Analytics Dashboard",
-    description: "Real-time business intelligence platform",
-    category: "SaaS",
+    title: "SaaS Business Intelligence Dashboard",
+    description:
+      "Real-time analytics system with AI-driven insights",
+    category: "SaaS Platform",
     image: saasImg,
     fullDescription:
-      "Advanced analytics platform with real-time data visualization, custom reporting, and AI-powered insights. Handles millions of data points with lightning-fast performance.",
+      "Developed a cloud-based SaaS analytics platform capable of processing millions of data points in real-time. Features include dynamic dashboards, custom reporting engines, API integrations, predictive analytics modules, and scalable multi-tenant architecture. Optimized for performance, reliability, and enterprise-level data security standards.",
   },
   {
     id: 4,
-    title: "Financial Tech Platform",
-    description: "Digital banking and investment management",
+    title: "Financial Technology Platform",
+    description:
+      "Secure digital banking & investment management system",
     category: "FinTech",
     image: financialImg,
     fullDescription:
-      "Secure digital banking platform with features including account management, real-time transfers, investment portfolios, and automated financial planning tools.",
+      "A comprehensive financial platform offering digital banking operations, investment portfolio management, automated financial planning tools, and real-time transaction monitoring. Built with secure API architecture, encrypted data handling, and compliance-focused workflows. Designed for high reliability, audit tracking, and seamless third-party integrations.",
   },
   {
     id: 5,
-    title: "Digital Markerting",
-    description: "Optimizing content to rank higher in search results",
-    category: "SEO",
+    title: "Digital Growth & SEO Strategy Platform",
+    description:
+      "Data-driven SEO, PPC & performance marketing system",
+    category: "Digital Marketing",
     image: seoImg,
     fullDescription:
-      "Digital marketing promotes brands and connects with customers using the internet and digital channels like email, social media, search engines, and apps, employing strategies such as SEO, content marketing, PPC ads, and social media to drive awareness, leads, and sales through data-driven, personalized experiences.",
+      "Implemented a full-scale digital marketing ecosystem leveraging SEO optimization, Google Ads management, content strategy, conversion tracking, and analytics reporting. Campaigns were structured with keyword research, competitor analysis, funnel optimization, and performance monitoring dashboards. Result-driven approach focused on organic traffic growth, lead generation, and measurable ROI improvement.",
   },
   {
     id: 6,
-    title: "SMM Panel",
+    title: "Advanced SMM Engagement System",
     description:
-      "Social Media Engagement Services",
-    category: "SMM",
+      "Automated social media growth & engagement platform",
+    category: "Social Media Marketing",
     image: professionalsImg,
     fullDescription:
-      "An SMM (Social Media Marketing) panel is an online, self-service store that allows users to purchase social media engagement services—such as followers, likes, views, and comments—for platforms like Instagram, Facebook, YouTube",
+      "Built a scalable Social Media Marketing (SMM) engagement platform enabling automated order management for social growth services including followers, likes, views, and engagement metrics. Integrated secure payment systems, API-based service providers, analytics tracking, and high-performance order processing infrastructure. Designed for reliability, automation efficiency, and global service scalability.",
   },
 ];

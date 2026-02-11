@@ -14,32 +14,36 @@ export const services: Service[] = [
     id: "software-dev",
     icon: Code,
     title: "Software Development",
-    description: "Custom software, enterprise systems, scalable solutions",
+    description:
+      "Enterprise-grade software engineered for performance, security & scale",
     details:
-      "We build robust, scalable software solutions tailored to your business needs. From enterprise systems to custom applications, our development team delivers quality code with best practices and modern technologies.",
+      "We design and develop high-performance custom software tailored to complex business needs. From enterprise systems and SaaS platforms to automation tools and scalable backend architectures, our solutions are secure, optimized, and built for long-term growth. We focus on clean architecture, maintainable code, and measurable business impact.",
   },
   {
     id: "web-mobile",
     icon: Smartphone,
-    title: "Web & Mobile Apps",
-    description: "Responsive websites + mobile apps with premium UI",
+    title: "Web & Mobile Applications",
+    description:
+      "Conversion-focused websites & cross-platform mobile apps with premium UX",
     details:
-      "Create stunning web and mobile experiences that engage users and drive conversions. We design and develop responsive websites and native mobile applications with beautiful, intuitive interfaces.",
+      "We build modern, responsive websites and powerful mobile applications that combine stunning UI with seamless user experience. Whether it’s a startup MVP or a large-scale product, we ensure fast performance, scalable architecture, and intuitive design that drives engagement and revenue growth.",
   },
   {
     id: "digital-marketing",
     icon: TrendingUp,
-    title: "Digital Marketing",
-    description: "SEO, paid ads, content strategy, lead generation",
+    title: "Digital Marketing & Growth",
+    description:
+      "SEO, SMO, Google Ads, ecommerce marketing & ROI-driven campaigns",
     details:
-      "Accelerate your growth with data-driven digital marketing strategies. We offer comprehensive services including SEO optimization, paid advertising campaigns, content marketing, and lead generation that deliver measurable results.",
+      "Our digital growth strategies are data-backed and performance-focused. We provide SEO, SMO, Google Ads (AdWords), ecommerce marketing, video marketing, content marketing, email automation, analytics & reporting. Every campaign is optimized for conversions, lead generation, and measurable ROI to scale your brand sustainably.",
   },
   {
     id: "social-media",
     icon: Share2,
-    title: "Social Media Management",
-    description: "Organic growth + analytics",
+    title: "Social Media & Brand Strategy",
+    description:
+      "Strategic content, paid campaigns & analytics-driven audience growth",
     details:
-      "Build your brand presence across social platforms with strategic content and community management. We help you grow organically, engage your audience, and track performance with detailed analytics.",
+      "We craft impactful social media strategies that increase brand visibility and engagement. From content planning and paid ad management to influencer collaboration and performance analytics, we help businesses build strong digital authority and consistent audience growth across platforms.",
   },
 ];
