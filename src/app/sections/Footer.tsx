@@ -1,13 +1,5 @@
 // src/app/sections/Footer.tsx
-import {
-  Instagram,
-  Facebook,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import logo from "../../assets/logo.png";
 
 type Props = {
@@ -39,34 +31,21 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 border-t border-purple-700 px-4 sm:px-6 lg:px-8">
-      {/* ✅ Big watermark brand text (Invimatic-style highlight) */}
+      {/* ✅ Big watermark brand text (fixed: more visible + no cutting) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* subtle glow blobs */}
         <div className="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute -bottom-28 -right-28 h-72 w-72 rounded-full bg-pink-500/12 blur-3xl" />
 
-        {/* watermark text */}
-        <div className="absolute left-1/2 top-[64%] -translate-x-1/2 -translate-y-1/2 select-none">
-          <div
-            className="
-              text-[72px] sm:text-[120px] md:text-[160px] lg:text-[220px]
-              font-extrabold tracking-tight
-              text-white/[0.055]
-              whitespace-nowrap
-            "
-          >
-            KrishnaTech
-          </div>
-          <div
-            className="
-              -mt-5 sm:-mt-8 md:-mt-10
-              text-[56px] sm:text-[96px] md:text-[130px] lg:text-[180px]
-              font-extrabold tracking-tight
-              text-white/[0.04]
-              whitespace-nowrap
-            "
-          >
-            Innovations
+        {/* watermark text (centered + responsive + no nowrap cutting) */}
+        <div className="absolute inset-0 flex items-center justify-center select-none">
+          <div className="text-center leading-none">
+            <div className="text-[60px] sm:text-[110px] md:text-[150px] lg:text-[200px] font-extrabold tracking-tight text-white/[0.08]">
+              KrishnaTech
+            </div>
+            <div className="-mt-4 sm:-mt-6 md:-mt-8 text-[48px] sm:text-[90px] md:text-[120px] lg:text-[160px] font-extrabold tracking-tight text-white/[0.06]">
+              Innovations
+            </div>
           </div>
         </div>
       </div>
@@ -75,8 +54,8 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
         <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-10">
           {/* Brand + Social */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-14 h-14 rounded-xl p-2 bg-white/10 border border-purple-400/30 backdrop-blur-sm shadow-md">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="w-14 h-14 rounded-xl p-2 bg-white/10 border border-purple-400/30 backdrop-blur-sm shadow-md flex-shrink-0">
                 <img
                   src={logo}
                   alt="KrishnaTech Innovations"
@@ -84,18 +63,17 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
                 />
               </div>
 
-              <div className="leading-tight">
-                {/* ✅ Brand text with theme gradient (fix for white KrishnaTech) */}
-                <div className="text-xl font-bold leading-tight">
+              <div className="min-w-0">
+                <div className="text-xl sm:text-2xl font-bold leading-snug flex flex-wrap items-baseline gap-x-2">
                   <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                     KrishnaTech
-                  </span>{" "}
+                  </span>
                   <span className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent">
                     Innovations
                   </span>
                 </div>
 
-                <div className="text-purple-300 italic text-sm">
+                <div className="text-purple-300 italic text-sm mt-1">
                   Technology with Divine Intelligence
                 </div>
               </div>
@@ -253,8 +231,6 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
                 </span>
               </div>
             </div>
-
-            {/* ✅ Get a Quote button removed */}
           </div>
         </div>
 
