@@ -186,7 +186,7 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
 
             <div className="space-y-4">
               <a
-                href="tel:+919460403092"
+                href="tel:+919784903092"
                 className="flex items-start gap-3 text-purple-200 hover:text-white transition-colors"
               >
                 <span className="w-9 h-9 rounded-xl bg-white/10 border border-purple-400/25 flex items-center justify-center">
@@ -196,12 +196,12 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
                   <span className="block text-white/90 text-sm font-semibold">
                     Phone
                   </span>
-                  <span className="block text-sm">+91 9460403092</span>
+                  <span className="block text-sm">+91 9784903092</span>
                 </span>
               </a>
 
               <a
-                href="mailto:krishnatechinnovations@gmail.com"
+                href="mailto:contact@krishnatechinnovations.com"
                 className="flex items-start gap-3 text-purple-200 hover:text-white transition-colors"
               >
                 <span className="w-9 h-9 rounded-xl bg-white/10 border border-purple-400/25 flex items-center justify-center">
@@ -212,7 +212,7 @@ export default function Footer({ onScroll, onOpenPrivacy, onOpenTerms }: Props) 
                     Email
                   </span>
                   <span className="block text-sm break-all">
-                    krishnatechinnovations@gmail.com
+                    contact@krishnatechinnovations.com
                   </span>
                 </span>
               </a>

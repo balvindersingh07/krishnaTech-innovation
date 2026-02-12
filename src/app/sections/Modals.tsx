@@ -118,12 +118,12 @@ export default function Modals({
           <h3 className="text-lg text-slate-900 mt-6 font-semibold">5. Your Rights</h3>
           <p>
             You have the right to access, correct, or delete your personal information. To exercise these rights, please
-            contact us at krishnatechinnovations@gmail.com.
+            contact us at contact@krishnatechinnovations.com.
           </p>
 
           <h3 className="text-lg text-slate-900 mt-6 font-semibold">6. Contact Us</h3>
           <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-          <p className="text-purple-600 font-medium">krishnatechinnovations@gmail.com</p>
+          <p className="text-purple-600 font-medium">contact@krishnatechinnovations.com</p>
         </div>
       </Modal>
 
@@ -181,8 +181,8 @@ export default function Modals({
 
           <h3 className="text-lg text-slate-900 mt-6 font-semibold">8. Contact Information</h3>
           <p>For questions about these Terms of Service, please contact us at:</p>
-          <p className="text-purple-600 font-medium">krishnatechinnovations@gmail.com</p>
-          <p className="text-slate-600">+91 9460403092</p>
+          <p className="text-purple-600 font-medium">contact@krishnatechinnovations.com</p>
+          <p className="text-slate-600">+91 9784903092</p>
         </div>
       </Modal>
     </>
