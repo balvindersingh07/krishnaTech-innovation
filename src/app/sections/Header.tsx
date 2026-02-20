@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo.png";
 
@@ -19,7 +19,7 @@ export default function Header({
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-purple-200 z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img

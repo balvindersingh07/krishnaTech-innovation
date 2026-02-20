@@ -36,7 +36,9 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+      // 🔥 60 second timeout (Render cold start safe)
+      const timeout = setTimeout(() => controller.abort(), 60000);
 
       const res = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
@@ -65,7 +67,9 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
     } catch (e: any) {
       if (e.name === "AbortError") {
-        setSubmitError("Request timed out. Please try again.");
+        setSubmitError(
+          "Server is waking up. Please wait a few seconds and try again."
+        );
       } else {
         setSubmitError(
           e?.message || "Something went wrong. Please try again."

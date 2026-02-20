@@ -23,7 +23,8 @@ import { teamMembers } from "./data/team";
 type ChatRole = "user" | "bot";
 type ChatMsg = { id: string; role: ChatRole; text: string; ts: number };
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function App() {
       id: "m1",
       role: "bot",
       text:
-        "Hi 👋 I’m KrishnaTech Assistant. What do you want to build today?\n\nYou can ask about Web, Mobile Apps, SaaS, SEO or Pricing.",
+        "Hi 👋 I’m KrishnaTech Assistant. What do you want to build today?",
       ts: Date.now(),
     },
   ]);
@@ -58,7 +59,9 @@ export default function App() {
   };
 
   const selectedServiceData = services.find((s) => s.id === selectedService);
-  const selectedPortfolioData = portfolioItems.find((p) => p.id === selectedPortfolio);
+  const selectedPortfolioData = portfolioItems.find(
+    (p) => p.id === selectedPortfolio
+  );
 
   const pushMessage = (role: ChatRole, text: string) => {
     setMessages((prev) => [
@@ -83,27 +86,40 @@ export default function App() {
 
     try {
       if (!API_BASE) {
-        pushMessage("bot", "Backend not connected yet.");
+        pushMessage("bot", "Backend URL not configured.");
         return;
       }
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
 
       const res = await fetch(`${API_BASE}/api/ai/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: text }),
+        signal: controller.signal,
       });
 
-      const data = await res.json().catch(() => ({}));
+      clearTimeout(timeout);
+
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
+
+      const data = await res.json();
 
       pushMessage(
         "bot",
         data?.answer ||
           data?.reply ||
-          data?.data?.answer ||
           "Thanks! Tell me more about your project."
       );
-    } catch {
-      pushMessage("bot", "Server connection issue. Try again.");
+    } catch (error: any) {
+      if (error.name === "AbortError") {
+        pushMessage("bot", "Server is waking up. Try again in a moment.");
+      } else {
+        pushMessage("bot", "Server connection issue. Please try again.");
+      }
     } finally {
       setChatLoading(false);
     }
@@ -170,7 +186,9 @@ export default function App() {
               {messages.map((m) => (
                 <div
                   key={m.id}
-                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`flex ${
+                    m.role === "user" ? "justify-end" : "justify-start"
+                  }`}
                 >
                   <div
                     className={`rounded-2xl px-3 py-2 text-sm ${
@@ -183,7 +201,9 @@ export default function App() {
                   </div>
                 </div>
               ))}
-              {chatLoading && <Loader2 className="w-4 h-4 animate-spin text-purple-600" />}
+              {chatLoading && (
+                <Loader2 className="w-4 h-4 animate-spin text-purple-600" />
+              )}
               <div ref={listEndRef} />
             </div>
 
